@@ -14,7 +14,7 @@ describe('addition', () => {
   it('should return sum of multiple elements', async () => {
     expect(add('2,3,4')).toEqual(9)
   })
-  it('newline is valid delimiter', async () => {
+  it('accepts newline as a valid delimiter', async () => {
     expect(add('1\n2,3')).toEqual(6)
   })
   it('should allow for customized delimiters', async () => {
