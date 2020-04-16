@@ -25,7 +25,7 @@ export function string_incrementer(append: string) {
     return (append += '1')
   }
 
-  let arr:Array<string> = my_split(append)
+  const arr:Array<string> = my_split(append)
   let num: number = parseInt(arr[1],10)
   num += 1
 

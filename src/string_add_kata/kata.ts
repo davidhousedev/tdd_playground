@@ -26,15 +26,14 @@ export function add(numbers: string) {
 
   delimiters = new RegExp(`[${delims.join('')}]`)
 
-  let sum: number = 0
-  let arr: Array<string> = numbers
+  const arr: Array<string> = numbers
     .split(delimiters)
     .filter((item) => !isNaN(parseInt(item, 10)) && parseInt(item, 10) < max)
 
   const reducer = (accumulator, currentValue) =>
     currentValue < 0 ? negative.push(currentValue) : accumulator + currentValue
   let num_arr = arr.map(Number)
-  sum = num_arr.reduce(reducer)
+  const sum = num_arr.reduce(reducer)
 
   if (negative.length > 0) {
     throw `negatives not allowed: ${negative.join(' ')}`
