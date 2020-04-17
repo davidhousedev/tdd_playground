@@ -29,7 +29,4 @@ describe('addition', () => {
   it('should allow delimiters of any length', async () => {
     expect(add('//[***]\n1***3***3')).toEqual(7)
   })
-  // it('should allow multiple delimiters', async () => {
-  //   expect(add('//[*][%]\n1*2%3')).toEqual(6)
-  // })
 })

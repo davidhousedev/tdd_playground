@@ -2,8 +2,6 @@
 
 import { setupMaster } from 'cluster'
 
-//export const add = (a: number, b: number): number => a + b
-
 export function add(numbers: string) {
   if (!numbers) return 0
 
