@@ -17,7 +17,10 @@ describe('incrementer', () => {
 })
 
 describe('my splitter', () => {
-  it('should account for leading zeros', async () => {
+  it('should split word from numbers', async () => {
+    expect(my_split('foo1')).toEqual(['foo', '1'])
+  })
+  it('should add 0s to string', async () => {
     expect(my_split('bar001')).toEqual(['bar00', '001'])
   })
 })
