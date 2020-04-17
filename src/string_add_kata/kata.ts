@@ -7,18 +7,15 @@ export function add(numbers: string) {
 
   let delims: Array<string> = [',', '\n']
   let delimiters: RegExp
+  const og_delimiters: RegExp = /,\n/
   const single_custom_delimiter: RegExp = /\/\/\D\n/
   const long_custom_delimiter: RegExp = /\[(.*?)\]/
   let negative: Array<number> = []
   const max: number = 1000
 
-  delimiters = new RegExp(`[${delims.join('')}]`)
-
   if (numbers.match(single_custom_delimiter)) {
-    delims.push(numbers.split(delimiters)[0][2])
-  }
-
-  if (numbers.match(long_custom_delimiter)) {
+    delims.push(numbers.split(og_delimiters)[0][2])
+  } else if (numbers.match(long_custom_delimiter)) {
     delims.push(numbers.split(long_custom_delimiter)[1])
   }
 
@@ -30,7 +27,7 @@ export function add(numbers: string) {
 
   const reducer = (accumulator, currentValue) =>
     currentValue < 0 ? negative.push(currentValue) : accumulator + currentValue
-  let num_arr = arr.map(Number)
+  const num_arr = arr.map(Number)
   const sum = num_arr.reduce(reducer)
 
   if (negative.length > 0) {
