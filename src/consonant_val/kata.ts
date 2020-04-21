@@ -22,5 +22,13 @@ export function get_value(consonants: string) {
   return value
 }
 export function consonant_value(word: string) {
+    const consonants: Array<string> = my_split(word)
+    let max = 0
+    for (let i = 0; i < consonants.length; i++) {
+      const cur: number = get_value(consonants[i])
+      if (cur > max) max = cur
+    }
+  
+    return max
 
   }

@@ -30,3 +30,13 @@ describe('get value', () => {
     expect(get_value('ngth')).toEqual(49)
   })
 })
+
+describe('consonant value', () => {
+  it('should find highest value: zodiacs', async () => {
+    expect(consonant_value('zodiacs')).toEqual(26)
+  })
+
+  it('should find highest value: strength', async () => {
+    expect(consonant_value('strength')).toEqual(57)
+  })
+})
