@@ -16,3 +16,17 @@ describe('my split', () => {
     expect(my_split('STRENGTH')).toEqual(['str', 'ngth'])
   })
 })
+
+describe('get value', () => {
+  it('should calculate consonant set value: ngth', async () => {
+    expect(get_value('b')).toEqual(2)
+  })
+
+  it('should calculate consonant set value: cs', async () => {
+    expect(get_value('cs')).toEqual(22)
+  })
+
+  it('should calculate consonant set value: ngth', async () => {
+    expect(get_value('ngth')).toEqual(49)
+  })
+})
