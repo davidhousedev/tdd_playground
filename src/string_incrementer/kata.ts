@@ -1,8 +1,6 @@
 // Write your source code here
 
-import { setupMaster } from 'cluster'
-
-export function my_split(splitee: string) {
+export function mySplit(splitee: string) {
   const regex1 = /\d/
   const regex2 = /[^0]/
   const regex3 = /\D/
@@ -20,12 +18,12 @@ export function my_split(splitee: string) {
   return [word, num]
 }
 
-export function string_incrementer(append: string) {
+export function stringIncrementer(append: string) {
   if (isNaN(parseInt(append[append.length - 1], 10))) {
     return (append += '1')
   }
 
-  const arr: Array<string> = my_split(append)
+  const arr: Array<string> = mySplit(append)
   let num: number = parseInt(arr[1], 10)
   num += 1
 

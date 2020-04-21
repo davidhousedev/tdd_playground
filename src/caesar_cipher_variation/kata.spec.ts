@@ -9,10 +9,18 @@ describe('caesar cipher variation encode', () => {
   })
 
   it('encodes with capital letter wrap around', async () => {
-    expect(caesar_encode('adZ', 1)).toEqual('bfC')
+    expect(caesar_encode('AAAAAZZZZ', 1)).toEqual('BCDEFFGHI')
   })
   it('encodes with lower letter wrap around', async () => {
     expect(caesar_encode('aady', 1)).toEqual('bcgc')
+  })
+  it('handles spaces', async () => {
+    expect(
+      caesar_encode(
+        'I SHOULD HAVE KNOWN THAT YOU WOULD HAVE A PERFECT ANSWER FOR ME',
+        1
+      )
+    ).toEqual('J VLTASL RLHR ZDFOG ODXR YPW ATASL RLHR P GWKZZYQ ZNTYHV LVZ WP')
   })
   it('handles spaces', async () => {
     expect(

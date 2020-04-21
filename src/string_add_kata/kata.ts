@@ -1,7 +1,5 @@
 // Write your source code here
 
-import { setupMaster } from 'cluster'
-
 export function add(numbers: string) {
   if (!numbers) return 0
 
@@ -27,8 +25,8 @@ export function add(numbers: string) {
 
   const reducer = (accumulator, currentValue) =>
     currentValue < 0 ? negative.push(currentValue) : accumulator + currentValue
-  const num_arr = arr.map(Number)
-  const sum = num_arr.reduce(reducer)
+  const numArr = arr.map(Number)
+  const sum = numArr.reduce(reducer)
 
   if (negative.length > 0) {
     throw `negatives not allowed: ${negative.join(' ')}`

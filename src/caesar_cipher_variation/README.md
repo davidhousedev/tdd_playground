@@ -1,5 +1,5 @@
 # Description
-as found [here](https://www.codewars.com/kata/5508249a98b3234f420000fb)
+A moving shift cipher based on the caesar cipher as found [here](https://www.codewars.com/kata/5508249a98b3234f420000fb)
 
 ## encode 
 Codes the entire string and then returns an array of strings containing the coded string in 5 parts (five parts because, to avoid more risks, the coded message will be given to five runners, one piece for each runner).

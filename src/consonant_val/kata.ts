@@ -1,9 +1,8 @@
 // Write your source code here
 
-import { setupMaster } from 'cluster'
 import { parse } from 'querystring'
 
-export function my_split(word: string) {
+export function mySplit(word: string) {
   const regex: RegExp = /[aeiou]/
   word = word.toLocaleLowerCase()
   let arr: Array<string> = word.split(regex)
@@ -12,7 +11,7 @@ export function my_split(word: string) {
   return arr
 }
 
-export function get_value(consonants: string) {
+export function getValue(consonants: string) {
   const a: number = 96
   const arr: Array<string> = consonants.split('')
   const values = arr.map((ch) => ch.charCodeAt(0) - a)
@@ -21,14 +20,13 @@ export function get_value(consonants: string) {
   )
   return value
 }
-export function consonant_value(word: string) {
-    const consonants: Array<string> = my_split(word)
-    let max = 0
-    for (let i = 0; i < consonants.length; i++) {
-      const cur: number = get_value(consonants[i])
-      if (cur > max) max = cur
-    }
-  
-    return max
-
+export function consonantValue(word: string) {
+  const consonants: Array<string> = mySplit(word)
+  let max = 0
+  for (let i = 0; i < consonants.length; i++) {
+    const cur: number = getValue(consonants[i])
+    if (cur > max) max = cur
   }
+
+  return max
+}
