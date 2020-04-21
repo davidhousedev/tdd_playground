@@ -1,9 +1,7 @@
 // Write your source code here
-
-import { parse } from 'querystring'
+const regex: RegExp = /[aeiou]/
 
 export function mySplit(word: string) {
-  const regex: RegExp = /[aeiou]/
   word = word.toLocaleLowerCase()
   let arr: Array<string> = word.split(regex)
   //if two vowels next to each other there will be empty array slot
@@ -12,12 +10,15 @@ export function mySplit(word: string) {
 }
 
 export function getValue(consonants: string) {
-  const a: number = 96
+  const a: number = 'a'.charCodeAt(0) //returns 97
   const arr: Array<string> = consonants.split('')
-  const values = arr.map((ch) => ch.charCodeAt(0) - a)
-  const value = values.reduce(
-    (accumulator, current_value) => accumulator + current_value
-  )
+  const values:Array<number> = arr.map((ch) => ch.charCodeAt(0) - a + 1)
+  const value: number =
+    values.reduce(
+      (accumulator, currentValue) =>
+        accumulator + currentValue
+    )
+  console.log(value)
   return value
 }
 export function consonantValue(word: string) {

@@ -64,9 +64,8 @@ export function runners(message: string, shift: number) {
 
 export function decode(encrypted: Array<string>, shift: number) {
   let result: string = ''
-  const message: string = encrypted.reduce( 
-    (accumulator, currentValue) => accumulator + currentValue
-  )
+  const reducer = (accumulator, currentValue) => accumulator + currentValue
+  const message: string = encrypted.reduce(reducer, '')
 
   for (let i: number = 0; i < message.length; i++) {
     let charCode: number = message.charCodeAt(i)
@@ -87,8 +86,8 @@ export function decode(encrypted: Array<string>, shift: number) {
       charCode - shift < LOWER_A
     ) {
       // lower case wrap around
-      const new_code: number = LOWER_Z + ((charCode - LOWER_A - shift + 1) % 26)
-      result += String.fromCharCode(new_code)
+      const newCode: number = LOWER_Z + ((charCode - LOWER_A - shift + 1) % 26)
+      result += String.fromCharCode(newCode)
     } else {
       result += String.fromCharCode(charCode - shift)
     }
