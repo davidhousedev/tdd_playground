@@ -1,6 +1,6 @@
 // Write your source code here
 
-export function mySplit(splitee: string) {
+export function mySplit(splitee: string='') {
   const regex1 = /\d/
   const regex2 = /[^0]/
   const regex3 = /\D/
@@ -18,7 +18,7 @@ export function mySplit(splitee: string) {
   return [word, num]
 }
 
-export function stringIncrementer(append: string) {
+export function stringIncrementer(append: string = '') {
   if (isNaN(parseInt(append[append.length - 1], 10))) {
     return (append += '1')
   }

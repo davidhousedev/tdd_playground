@@ -40,7 +40,7 @@ export function caesar_encode(message: string = '', shift: number = 0) {
   return result
 }
 
-export function runners(message: string, shift: number) {
+export function runners(message: string = '', shift: number = 0) {
   let encoded = caesar_encode(message, shift)
   let runnerArray: Array<string> = []
 
@@ -62,7 +62,7 @@ export function runners(message: string, shift: number) {
   return runnerArray
 }
 
-export function decode(encrypted: Array<string>, shift: number) {
+export function decode(encrypted: Array<string> =[], shift: number =0) {
   let result: string = ''
   const reducer = (accumulator, currentValue) => accumulator + currentValue
   const message: string = encrypted.reduce(reducer, '')

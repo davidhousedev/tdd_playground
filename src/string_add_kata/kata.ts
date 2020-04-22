@@ -3,7 +3,7 @@ const ORIGINAL_DELIMS: RegExp = /,\n/
 const SINGLE_CUSTOM_DELIM: RegExp = /\/\/\D\n/
 const LONG_CUSTOM_DELIM: RegExp = /\[(.*?)\]/
 
-export function add(numbers: string) {
+export function add(numbers: string = '') {
   if (!numbers) return 0
 
   let delims: Array<string> = [',', '\n']
